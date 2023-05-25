@@ -2,21 +2,23 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import pages.HomePage;
 
 public class BaseTests {
     private static WebDriver driver;
-
-    public static void setUp() {
+    protected HomePage homePage;
+    @BeforeClass
+    public void setUp() {
         driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", "resources\\chromedriver.exe");
         driver.get("https://the-internet.herokuapp.com");
-        String title = driver.getTitle();
-        System.out.println(title);
         driver.manage().window().maximize();
-        driver.quit();
+        homePage = new HomePage(driver);
     }
-    public static void main(String[] args) {
-
-        BaseTests.setUp();
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
     }
  }
