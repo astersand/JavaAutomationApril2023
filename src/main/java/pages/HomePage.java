@@ -12,6 +12,8 @@ public class HomePage {
     private By dragAndDropLink = By.linkText("Drag and Drop");
     private By dynamicControlsLink = By.linkText("Dynamic Controls");
     private By alertsLink = By.linkText("JavaScript Alerts");
+    private By fileUploadLink = By.linkText("File Upload");
+    private By textEditorLink = By.linkText("WYSIWYG Editor");
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -43,5 +45,13 @@ public class HomePage {
     public AlertsPage clickAlertsLink() {
         driver.findElement(alertsLink).click();
         return new AlertsPage(driver);
+    }
+    public FileUploadPage clickFileUploadLink(){
+        driver.findElement(fileUploadLink).click();
+        return new FileUploadPage(driver);
+    }
+    public TextEditorPage clickTextEditorLink() {
+        driver.findElement(textEditorLink).click();
+        return new TextEditorPage(driver);
     }
 }
