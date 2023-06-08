@@ -11,6 +11,7 @@ public class HomePage {
     private By hoversLink = By.linkText("Hovers");
     private By dragAndDropLink = By.linkText("Drag and Drop");
     private By dynamicControlsLink = By.linkText("Dynamic Controls");
+    private By alertsLink = By.linkText("JavaScript Alerts");
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -38,5 +39,9 @@ public class HomePage {
     public DynamicControlsPage clickDynamicControlsLink() {
         driver.findElement(dynamicControlsLink).click();
         return new DynamicControlsPage(driver);
+    }
+    public AlertsPage clickAlertsLink() {
+        driver.findElement(alertsLink).click();
+        return new AlertsPage(driver);
     }
 }
