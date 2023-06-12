@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class HomePage {
     private WebDriver driver;
@@ -14,6 +15,7 @@ public class HomePage {
     private By alertsLink = By.linkText("JavaScript Alerts");
     private By fileUploadLink = By.linkText("File Upload");
     private By textEditorLink = By.linkText("WYSIWYG Editor");
+    private By largeAndDeepDomLink = By.linkText("Large & Deep DOM");
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -53,5 +55,9 @@ public class HomePage {
     public TextEditorPage clickTextEditorLink() {
         driver.findElement(textEditorLink).click();
         return new TextEditorPage(driver);
+    }
+    public LargeAndDeepDomPage clickLargeAndDeepDomPage() {
+        driver.findElement(largeAndDeepDomLink).click();
+        return new LargeAndDeepDomPage(driver);
     }
 }
