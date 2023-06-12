@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -14,6 +15,10 @@ public class CheckboxPage {
     public void clickCheckboxByIndex(int index) {
         WebElement checkbox = this.findCheckboxByIndex(index);
         checkbox.click();
+    }
+    public void clickCheckboxByIndexJs(int index) {
+        WebElement checkbox = this.findCheckboxByIndex(index);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", checkbox);
     }
     public boolean isChecked(int index) {
         WebElement selectedCheckbox = this.findCheckboxByIndex(index);

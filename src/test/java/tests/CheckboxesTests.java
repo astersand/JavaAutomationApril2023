@@ -9,7 +9,7 @@ public class CheckboxesTests extends BaseTests {
     @Test
     public void checkCheckboxesTest() {
         CheckboxPage checkboxPage = homePage.clickCheckboxesLink();
-        checkboxPage.clickCheckboxByIndex(1);
-        Assert.assertFalse(checkboxPage.isChecked(1), "checkbox is not checked");
+        checkboxPage.clickCheckboxByIndexJs(0);
+        Assert.assertTrue(checkboxPage.isChecked(0), "checkbox is not checked");
     }
 }
