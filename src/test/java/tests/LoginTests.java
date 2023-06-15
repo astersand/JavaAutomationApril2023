@@ -1,6 +1,7 @@
 package tests;
 
 import base.BaseTests;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.SecureAreaPage;
@@ -22,7 +23,7 @@ public class LoginTests extends BaseTests {
         loginPage.setUsername("tomsmith");
         loginPage.setPassword("SuperSecret");
         loginPage.clickLoginButton();
-        assertTrue(loginPage.getLoginPageAlertText().contains("Your password is invalid!"), "Alert text is wrong");
+        assertTrue(loginPage.getLoginPageAlertText().contains("Your password is invalid!!!"), "Alert text is wrong");
     }
     @Test
     public void testWrongUsernameLogin() {
